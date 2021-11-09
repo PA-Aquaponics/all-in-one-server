@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  description: 'An API to manage the sensors in the Aquaponic system'
+  version: "1.0.0"
+  title: 'Aquaponic Sensors DB API'
+  contact:
+    email: akcaden1@students.zhaw.ch
+  license:
+    name: 'some license'
+    url: 'http://some.license.com'
+paths:
+  /sensors:
+    get:
+      description: 'get a list of sensors'
+      responses:
+        '200':
+          description: 'search results matching criteria'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Sensor'
+        '204':
+          description: 'no entries'
+        '400':
+          description: 'bad input parameter'
+    post:
+      description: 'create new sensor in the database'
+      operationId: addSensor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sensor'
+      responses:
+        '200':
+          description: 'successfully created a new sensor'
+        '400':
+          description: 'bad input parameter'
+  /sensors/{entityId}/:
+    put:
+      description: 'change property of sensor'
+      operationId: changeSensor
+      parameters:
+        - in: path
+          name: entityId
+          required: true
+          content:
+            entityId:
+              example: 1
+        - in: query
+          name: sensor
+          schema:
+            $ref: '#/components/schemas/Sensor'
+      responses:
+        '200':
+          description: 'successfully changed property of sensor'
+
+
+components:
+  schemas:
+    Sensor:
+      type: object
+      required:
+        - entityId
+        - name
+        - serialNrDevice
+        - deviceType
+        - unit
+        - tank
+        - system
+        - startingPos
+        - length
+        - dataType
+        - modBusPort
+        - serial_port
+        - alarmUpperLimit
+        - alarmLowerLimit
+        - alarmActive
+      properties:
+        id:
+          type: integer
+          example: 55
+        name:
+          type: string
+          example: 'A_O2 % Sat'
+        serialNrDevice:
+          type: string
+          example: '12770000001'
+        deviceType:
+          type: string
+          example: 'O'
+        unit:
+          type: string
+          example: '%'
+        tank:
+          type: string
+          example: 'A'
+        system:
+          type: string
+          example: 'Aqualab'
+        startingPos:
+          type: integer
+          example: 0
+        length:
+          type: integer
+          example: 2
+        dataType:
+          type: string
+          example: 'float'
+        modBusPort:
+          type: integer
+          example: 10
+        serial_port:
+          type: string
+          example: '/dev/ttyUSB0'
+        alarmUpperLimit:
+          type: integer
+          example: 0
+        alarmLowerLimit:
+          type: integer
+          example: 0
+        alaramActive:
+          type: integer
+          example: 0
