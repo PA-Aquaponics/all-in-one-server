@@ -1,0 +1,3 @@
+rootProject.name = 'PA-Aquaponics'
+
+include 'paaq-client', 'paaq-server'
