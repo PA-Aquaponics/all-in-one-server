@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  mysqldb:
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=test
+    ports:
+      - "8001:5432"
+    volumes:
+      - /home/deniz/dump:/docker-entrypoint-initdb.d
+  spring_boot:
+    image: denadeox/paaq:latest
+    restart: on-failure
+    ports:
+      - "8080:8080"
