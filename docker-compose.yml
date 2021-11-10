@@ -1,4 +1,5 @@
 version: "3.3"
+
 services:
   mysqldb:
     image: mysql:latest
@@ -8,7 +9,7 @@ services:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_DATABASE=test
     ports:
-      - "8001:5432"
+      - "3306"
     volumes:
       - /home/deniz/dump:/docker-entrypoint-initdb.d
   spring_boot:
@@ -17,3 +18,4 @@ services:
     restart: on-failure
     ports:
       - "8080:8080"
+
