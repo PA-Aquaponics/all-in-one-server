@@ -32,3 +32,24 @@ openApiGenerate {
             dateLibrary: "java8"
     ]
 }
+
+task generateSpringServer(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
+    generatorName = "spring"
+    inputSpec = "$rootDir/paaq-generator/api-gen.yaml".toString()
+    outputDir = "$buildDir/generated".toString()
+    apiPackage = "ch.zhaw.paaq.api"
+    invokerPackage = "ch.zhaw.paaq.invoker"
+    modelPackage = "ch.zhaw.paaq.model"
+    configOptions = [
+            dateLibrary: "java8"
+    ]
+}
+
+task generateAngularClient(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
+    generatorName = "typescript-angular"
+    inputSpec = "$rootDir/paaq-generator/api-gen.yaml".toString()
+    outputDir = "$buildDir/generated".toString()
+    configOptions = [
+            ngVersion: "13.0.3",
+    ]
+}

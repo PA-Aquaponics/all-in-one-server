@@ -1,15 +1,6 @@
-# PaaqClient - Project Specifics
-## OpenApi Gen
-To use the OpenApi-Generator make sure it is installed:
-```npm install -g ng-openapi-gen```.
+# PaaqClient
 
-Afterwards change into the directory where ``paaq-api.yaml`` is loacated and run: 
-
-```ng-openapi-gen --input paaq-api.yaml --output src\app\api```
-
-# PaaqClient - Angular
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
 
