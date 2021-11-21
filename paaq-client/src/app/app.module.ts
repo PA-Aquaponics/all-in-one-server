@@ -9,7 +9,8 @@ import {
   Configuration,
   ConfigurationParameters
 } from "./api/v1";
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function  apiConfigFactory(): Configuration {
   const params: ConfigurationParameters = {
@@ -27,7 +28,8 @@ export function  apiConfigFactory(): Configuration {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    [ApiModule.forRoot(apiConfigFactory)]
+    [ApiModule.forRoot(apiConfigFactory)],
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
