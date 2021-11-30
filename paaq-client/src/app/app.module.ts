@@ -12,6 +12,7 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SensorsComponent } from './sensors/sensors.component';
+import { SensorComponent } from './sensor/sensor.component';
 
 export function  apiConfigFactory(): Configuration {
   const params: ConfigurationParameters = {
@@ -24,7 +25,8 @@ export function  apiConfigFactory(): Configuration {
 @NgModule({
   declarations: [
     AppComponent,
-    SensorsComponent
+    SensorsComponent,
+    SensorComponent
   ],
   imports: [
     BrowserModule,
