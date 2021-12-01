@@ -2,25 +2,28 @@ package ch.zhaw.paaq.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
-import javax.validation.Valid;
+
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
 /**
  * Sensor
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-11-10T15:30:58.573456300+01:00[Europe/Berlin]")
+@Entity
+@Table(name = "mod_bus_entity")
 public class Sensor   {
-  @JsonProperty("id")
-  private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @JsonProperty("entityId")
+  private Integer entityId;
 
-  @JsonProperty("name")
+  @JsonProperty("Name")
+  @Column(name = "Name")
   private String name;
 
-  @JsonProperty("serialNrDevice")
+  @JsonProperty("SerialNrDevice")
   private String serialNrDevice;
 
   @JsonProperty("deviceType")
@@ -59,8 +62,8 @@ public class Sensor   {
   @JsonProperty("alaramActive")
   private Integer alaramActive;
 
-  public Sensor id(Integer id) {
-    this.id = id;
+  public Sensor entityId(Integer entityId) {
+    this.entityId = entityId;
     return this;
   }
 
@@ -71,12 +74,12 @@ public class Sensor   {
   @ApiModelProperty(example = "55", value = "")
 
 
-  public Integer getId() {
-    return id;
+  public Integer getEntityId() {
+    return entityId;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setEntityId(Integer id) {
+    this.entityId = id;
   }
 
   public Sensor name(String name) {
@@ -382,7 +385,7 @@ public class Sensor   {
       return false;
     }
     Sensor sensor = (Sensor) o;
-    return Objects.equals(this.id, sensor.id) &&
+    return Objects.equals(this.entityId, sensor.entityId) &&
         Objects.equals(this.name, sensor.name) &&
         Objects.equals(this.serialNrDevice, sensor.serialNrDevice) &&
         Objects.equals(this.deviceType, sensor.deviceType) &&
@@ -401,7 +404,7 @@ public class Sensor   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, serialNrDevice, deviceType, unit, tank, system, startingPos, length, dataType, modBusPort, serialPort, alarmUpperLimit, alarmLowerLimit, alaramActive);
+    return Objects.hash(entityId, name, serialNrDevice, deviceType, unit, tank, system, startingPos, length, dataType, modBusPort, serialPort, alarmUpperLimit, alarmLowerLimit, alaramActive);
   }
 
   @Override
@@ -409,7 +412,7 @@ public class Sensor   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Sensor {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    id: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    serialNrDevice: ").append(toIndentedString(serialNrDevice)).append("\n");
     sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
@@ -438,5 +441,7 @@ public class Sensor   {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
+  public Sensor() {}
 }
 

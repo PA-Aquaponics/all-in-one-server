@@ -6,13 +6,23 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"ch.zhaw.paaq.invoker", "ch.zhaw.paaq.api" , "org.openapitools.configuration"})
+@EnableJpaRepositories("ch.zhaw.paaq.repository")
+@EntityScan(basePackages = {
+        "ch.zhaw.paaq.model"
+})
+@ComponentScan(basePackages = {"ch.zhaw.paaq.invoker",
+        "ch.zhaw.paaq.api" ,
+        "ch.zhaw.paaq.repository",
+        "ch.zhaw.paaq.service",
+        "org.openapitools.configuration"})
 public class OpenAPI2SpringBoot implements CommandLineRunner {
 
     @Override
