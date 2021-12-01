@@ -37,4 +37,24 @@ public class SensorsApiController implements SensorsApi {
         List<Sensor> response = sensorService.getAllSensors();
         return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
     }
+
+    @Override
+    public ResponseEntity<Void> addSensor(Sensor sensor) {
+        if (sensorService.getSensorById(sensor.getEntityId()).isPresent()) {
+            return new ResponseEntity<>(HttpStatus.ALREADY_REPORTED);
+        } else {
+            sensorService.saveSensor(sensor);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+    }
+
+    @Override
+    public ResponseEntity<Void> changeSensor(String entityId, Sensor sensor) {
+        if (sensorService.getSensorById(sensor.getEntityId()).isPresent()) {
+            sensorService.saveSensor(sensor);
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

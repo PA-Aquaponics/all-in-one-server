@@ -36,7 +36,7 @@ public class Sensor   {
   private String tank;
 
   @JsonProperty("system")
-  private String system;
+  private String tankSystem;
 
   @JsonProperty("startingPos")
   private Integer startingPos;
@@ -187,25 +187,25 @@ public class Sensor   {
     this.tank = tank;
   }
 
-  public Sensor system(String system) {
-    this.system = system;
+  public Sensor tankSystem(String system) {
+    this.tankSystem = system;
     return this;
   }
 
   /**
-   * Get system
-   * @return system
+   * Get tankSystem
+   * @return tankSystem
   */
   @ApiModelProperty(example = "Aqualab", required = true, value = "")
   @NotNull
 
 
-  public String getSystem() {
-    return system;
+  public String getTankSystem() {
+    return tankSystem;
   }
 
-  public void setSystem(String system) {
-    this.system = system;
+  public void setTankSystem(String system) {
+    this.tankSystem = system;
   }
 
   public Sensor startingPos(Integer startingPos) {
@@ -365,8 +365,7 @@ public class Sensor   {
    * @return alaramActive
   */
   @ApiModelProperty(example = "0", value = "")
-
-
+  @NotNull
   public Integer getAlaramActive() {
     return alaramActive;
   }
@@ -391,7 +390,7 @@ public class Sensor   {
         Objects.equals(this.deviceType, sensor.deviceType) &&
         Objects.equals(this.unit, sensor.unit) &&
         Objects.equals(this.tank, sensor.tank) &&
-        Objects.equals(this.system, sensor.system) &&
+        Objects.equals(this.tankSystem, sensor.tankSystem) &&
         Objects.equals(this.startingPos, sensor.startingPos) &&
         Objects.equals(this.length, sensor.length) &&
         Objects.equals(this.dataType, sensor.dataType) &&
@@ -404,7 +403,7 @@ public class Sensor   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entityId, name, serialNrDevice, deviceType, unit, tank, system, startingPos, length, dataType, modBusPort, serialPort, alarmUpperLimit, alarmLowerLimit, alaramActive);
+    return Objects.hash(entityId, name, serialNrDevice, deviceType, unit, tank, tankSystem, startingPos, length, dataType, modBusPort, serialPort, alarmUpperLimit, alarmLowerLimit, alaramActive);
   }
 
   @Override
@@ -418,7 +417,7 @@ public class Sensor   {
     sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    tank: ").append(toIndentedString(tank)).append("\n");
-    sb.append("    system: ").append(toIndentedString(system)).append("\n");
+    sb.append("    system: ").append(toIndentedString(tankSystem)).append("\n");
     sb.append("    startingPos: ").append(toIndentedString(startingPos)).append("\n");
     sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");

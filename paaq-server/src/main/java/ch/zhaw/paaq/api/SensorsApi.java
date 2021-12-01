@@ -40,6 +40,7 @@ public interface SensorsApi {
     @ApiOperation(value = "", nickname = "addSensor", notes = "create new sensor in the database", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successfully created a new sensor"),
+        @ApiResponse(code = 208, message = "sensor already exists"),
         @ApiResponse(code = 400, message = "bad input parameter") })
     @RequestMapping(
         method = RequestMethod.POST,

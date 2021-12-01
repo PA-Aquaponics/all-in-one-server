@@ -34,7 +34,7 @@ CREATE TABLE `mod_bus_entity` (
   `device_type` varchar(255) DEFAULT NULL COMMENT 'This is for Devices that send multiple values. For example a O2 Sensor that measures O2 and Temp. Add a character to identify them',
   `unit` varchar(255) NOT NULL,
   `tank` varchar(50) NOT NULL,
-  `system` varchar(50) NOT NULL,
+  `tank_system` varchar(50) NOT NULL,
   `starting_pos` int(8) NOT NULL,
   `length` int(4) NOT NULL,
   `data_type` varchar(15) NOT NULL,
@@ -43,14 +43,14 @@ CREATE TABLE `mod_bus_entity` (
   `serial_port` varchar(50) NOT NULL DEFAULT '/dev/ttyUSB0',
   `alarm_upper_limit` float NOT NULL,
   `alarm_lower_limit` float NOT NULL,
-  `alarm_active` tinyint(1) NOT NULL
+  `alarm_active` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `ModBusEntity`
 --
 
-INSERT INTO `mod_bus_entity` (`entity_id`, `name`, `serial_nr_device`, `device_type`, `unit`, `tank`, `system`, `starting_pos`, `length`, `data_type`, `mod_bus_port`, `last_changed`, `serial_port`, `alarm_upper_limit`, `alarm_lower_limit`, `alarm_active`) VALUES
+INSERT INTO `mod_bus_entity` (`entity_id`, `name`, `serial_nr_device`, `device_type`, `unit`, `tank`, `tank_system`, `starting_pos`, `length`, `data_type`, `mod_bus_port`, `last_changed`, `serial_port`, `alarm_upper_limit`, `alarm_lower_limit`, `alarm_active`) VALUES
 (55, 'A_O2 % Sat', '12770000001', 'O', '%', 'A', 'Aqualab', 0, 2, 'float', 10, '2020-12-23 14:02:02', '/dev/ttyUSB0', 0, 0, 0),
 (56, 'A_O2 Temp', '12770000001', 'T', 'Celcius', 'A', 'Aqualab', 2, 2, 'float', 10, '2020-12-23 14:02:05', '/dev/ttyUSB0', 0, 0, 0),
 (57, 'A_PH', '000000718988', NULL, 'pH', 'A', 'Aqualab', 4, 2, 'float', 10, '2020-12-23 13:20:14', '/dev/ttyUSB0', 0, 0, 0),

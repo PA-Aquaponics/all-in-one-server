@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SensorService {
@@ -24,7 +25,10 @@ public class SensorService {
     }
 
     public List<Sensor> getAllSensors() {
-        long count = sensorRepository.count();
         return sensorRepository.findAll();
+    }
+
+    public Optional<Sensor> getSensorById(int id) {
+        return sensorRepository.findById(id);
     }
 }
