@@ -8,7 +8,7 @@ import { SENSORS } from '../mock-sensors';
 })
 export class SensorsComponent implements OnInit {
 
-  //GET DATA(EXAMPLE DATA)
+  //GET DATA FROM REST!!
   sensors = SENSORS;
 
   constructor() {}
