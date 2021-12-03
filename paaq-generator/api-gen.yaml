@@ -120,6 +120,6 @@ components:
         alarmLowerLimit:
           type: integer
           example: 0
-        alaramActive:
+        alarmActive:
           type: integer
           example: 0

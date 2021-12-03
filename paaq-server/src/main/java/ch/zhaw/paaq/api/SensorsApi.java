@@ -63,7 +63,9 @@ public interface SensorsApi {
      */
     @ApiOperation(value = "", nickname = "changeSensor", notes = "change property of sensor", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successfully changed property of sensor") })
+        @ApiResponse(code = 200, message = "successfully changed property of sensor"),
+        @ApiResponse(code = 202, message = "successfully changed property of sensor")
+    })
     @RequestMapping(
         method = RequestMethod.PUT,
         value = "/sensors/{entityId}/"

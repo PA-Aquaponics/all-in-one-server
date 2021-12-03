@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
 @Table(name = "mod_bus_entity")
 public class Sensor   {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @JsonProperty("entityId")
   private Integer entityId;
 
@@ -59,8 +59,8 @@ public class Sensor   {
   @JsonProperty("alarmLowerLimit")
   private Integer alarmLowerLimit;
 
-  @JsonProperty("alaramActive")
-  private Integer alaramActive;
+  @JsonProperty("alarmActive")
+  private Integer alarmActive;
 
   public Sensor entityId(Integer entityId) {
     this.entityId = entityId;
@@ -355,8 +355,8 @@ public class Sensor   {
     this.alarmLowerLimit = alarmLowerLimit;
   }
 
-  public Sensor alaramActive(Integer alaramActive) {
-    this.alaramActive = alaramActive;
+  public Sensor alarmActive(Integer alaramActive) {
+    this.alarmActive = alaramActive;
     return this;
   }
 
@@ -367,11 +367,11 @@ public class Sensor   {
   @ApiModelProperty(example = "0", value = "")
   @NotNull
   public Integer getAlaramActive() {
-    return alaramActive;
+    return alarmActive;
   }
 
   public void setAlaramActive(Integer alaramActive) {
-    this.alaramActive = alaramActive;
+    this.alarmActive = alaramActive;
   }
 
 
@@ -398,12 +398,12 @@ public class Sensor   {
         Objects.equals(this.serialPort, sensor.serialPort) &&
         Objects.equals(this.alarmUpperLimit, sensor.alarmUpperLimit) &&
         Objects.equals(this.alarmLowerLimit, sensor.alarmLowerLimit) &&
-        Objects.equals(this.alaramActive, sensor.alaramActive);
+        Objects.equals(this.alarmActive, sensor.alarmActive);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entityId, name, serialNrDevice, deviceType, unit, tank, tankSystem, startingPos, length, dataType, modBusPort, serialPort, alarmUpperLimit, alarmLowerLimit, alaramActive);
+    return Objects.hash(entityId, name, serialNrDevice, deviceType, unit, tank, tankSystem, startingPos, length, dataType, modBusPort, serialPort, alarmUpperLimit, alarmLowerLimit, alarmActive);
   }
 
   @Override
@@ -425,7 +425,7 @@ public class Sensor   {
     sb.append("    serialPort: ").append(toIndentedString(serialPort)).append("\n");
     sb.append("    alarmUpperLimit: ").append(toIndentedString(alarmUpperLimit)).append("\n");
     sb.append("    alarmLowerLimit: ").append(toIndentedString(alarmLowerLimit)).append("\n");
-    sb.append("    alaramActive: ").append(toIndentedString(alaramActive)).append("\n");
+    sb.append("    alaramActive: ").append(toIndentedString(alarmActive)).append("\n");
     sb.append("}");
     return sb.toString();
   }
