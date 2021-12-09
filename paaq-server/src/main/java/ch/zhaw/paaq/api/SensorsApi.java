@@ -40,6 +40,7 @@ public interface SensorsApi {
     @ApiOperation(value = "", nickname = "addSensor", notes = "create new sensor in the database", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successfully created a new sensor"),
+        @ApiResponse(code = 208, message = "sensor already exists"),
         @ApiResponse(code = 400, message = "bad input parameter") })
     @RequestMapping(
         method = RequestMethod.POST,
@@ -62,7 +63,9 @@ public interface SensorsApi {
      */
     @ApiOperation(value = "", nickname = "changeSensor", notes = "change property of sensor", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successfully changed property of sensor") })
+        @ApiResponse(code = 200, message = "successfully changed property of sensor"),
+        @ApiResponse(code = 202, message = "successfully changed property of sensor")
+    })
     @RequestMapping(
         method = RequestMethod.PUT,
         value = "/sensors/{entityId}/"
@@ -102,7 +105,6 @@ public interface SensorsApi {
             }
         });
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
     }
 
 }
