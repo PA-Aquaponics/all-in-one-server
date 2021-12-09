@@ -58,11 +58,11 @@ public class Log   {
   @ApiModelProperty(example = "55", value = "")
 
 
-  public Integer getId() {
+  public Integer getLogId() {
     return logId;
   }
 
-  public void setId(Integer logId) {
+  public void setLogId(Integer logId) {
     this.logId = logId;
   }
 
