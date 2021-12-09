@@ -16,18 +16,17 @@
   z-index: 1;
 }
 .testcard {
-  max-width: 200px;
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 200px;
+  height: 250px;
   text-align: center;
   margin-top: 30px;
   margin-left: 30px;
 }
+
 .testcardheader {
-  max-width: 200px;
-  padding-left: 5px;
-  padding-right: 5px;
   text-align: center;
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-bottom: 20px;
+}
+.testcardcontent {
+  text-align: center;
 }
