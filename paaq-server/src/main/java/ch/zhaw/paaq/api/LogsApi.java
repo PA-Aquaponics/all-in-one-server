@@ -31,11 +31,11 @@ public interface LogsApi {
     }
 
     /**
-     * POST /sensors
-     * create new sensor in the database
+     * POST /logs
+     * create new log in the database
      *
      * @param log  (optional)
-     * @return successfully created a new sensor (status code 200)
+     * @return successfully created a new log (status code 200)
      *         or bad input parameter (status code 400)
      */
     @ApiOperation(value = "", nickname = "addLog", notes = "create new log in the database", tags={  })
