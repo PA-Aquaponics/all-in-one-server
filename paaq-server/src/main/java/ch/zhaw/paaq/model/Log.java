@@ -16,8 +16,8 @@ import javax.validation.constraints.*;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-11-10T15:30:58.573456300+01:00[Europe/Berlin]")
 public class Log   {
-  @JsonProperty("id")
-  private Integer id;
+  @JsonProperty("logId")
+  private Integer logId;
 
   @JsonProperty("name")
   private String name;
@@ -40,24 +40,24 @@ public class Log   {
   @JsonProperty("timestamp")
   private Timestamp timestamp;
 
-  public Log id(Integer id) {
-    this.id = id;
+  public Log logId(Integer logId) {
+    this.logId = logId;
     return this;
   }
 
   /**
-   * Get id
-   * @return id
+   * Get logId
+   * @return logId
   */
   @ApiModelProperty(example = "55", value = "")
 
 
   public Integer getId() {
-    return id;
+    return logId;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setId(Integer logId) {
+    this.logId = logId;
   }
 
   public Log name(String name) {
@@ -218,7 +218,7 @@ public class Log   {
       return false;
     }
     Log sensor = (Log) o;
-    return Objects.equals(this.id, sensor.id) &&
+    return Objects.equals(this.logId, sensor.logId) &&
         Objects.equals(this.name, sensor.name) &&
         Objects.equals(this.serialNrDevice, sensor.serialNrDevice) &&
         Objects.equals(this.value, sensor.value) &&
@@ -230,7 +230,7 @@ public class Log   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, serialNrDevice, value, unit, tank, system);
+    return Objects.hash(logId, name, serialNrDevice, value, unit, tank, system);
   }
 
   @Override
@@ -238,7 +238,7 @@ public class Log   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Log {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    id: ").append(toIndentedString(logId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    serialNrDevice: ").append(toIndentedString(serialNrDevice)).append("\n");
     sb.append("    deviceType: ").append(toIndentedString(value)).append("\n");
