@@ -41,7 +41,7 @@ public class Log   {
   private String tank;
 
   @JsonProperty("system")
-  private String system;
+  private String tankSystem;
 
   @JsonProperty("timestamp")
   private Timestamp timestamp;
@@ -151,25 +151,25 @@ public class Log   {
     this.tank = tank;
   }
 
-  public Log system(String system) {
-    this.system = system;
+  public Log tankSystem(String tankSystem) {
+    this.tankSystem = tankSystem;
     return this;
   }
 
   /**
-   * Get system
-   * @return system
+   * Get tankSystem
+   * @return tankSystem
   */
   @ApiModelProperty(example = "Aqualab", required = true, value = "")
   @NotNull
 
 
   public String getSystem() {
-    return system;
+    return tankSystem;
   }
 
-  public void setSystem(String system) {
-    this.system = system;
+  public void setSystem(String tankSystem) {
+    this.tankSystem = tankSystem;
   }
 
   public Log timestamp(Timestamp timestamp) {
@@ -230,13 +230,13 @@ public class Log   {
         Objects.equals(this.value, sensor.value) &&
         Objects.equals(this.unit, sensor.unit) &&
         Objects.equals(this.tank, sensor.tank) &&
-        Objects.equals(this.system, sensor.system) &&
+        Objects.equals(this.tankSystem, sensor.tankSystem) &&
         Objects.equals(this.timestamp, sensor.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(logId, name, serialNrDevice, value, unit, tank, system);
+    return Objects.hash(logId, name, serialNrDevice, value, unit, tank, tankSystem);
   }
 
   @Override
@@ -250,7 +250,7 @@ public class Log   {
     sb.append("    deviceType: ").append(toIndentedString(value)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    tank: ").append(toIndentedString(tank)).append("\n");
-    sb.append("    system: ").append(toIndentedString(system)).append("\n");
+    sb.append("    system: ").append(toIndentedString(tankSystem)).append("\n");
     sb.append("}");
     return sb.toString();
   }
