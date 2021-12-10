@@ -18,11 +18,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
+import { MainviewComponent } from './mainview/mainview.component';
+import { LogviewComponent } from './logview/logview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
+    SidebarComponent,
+    MainviewComponent,
+    LogviewComponent
   ],
   imports: [
     BrowserModule,

@@ -6,9 +6,9 @@
       [opened]="(isHandset$ | async) === false">-->
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Startseite</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#">Übersicht</a>
+      <a mat-list-item href="#">Logs</a>
+      <a mat-list-item href="https://paaq.sloppy.zone/swagger">Api Dokumentation</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,107 +23,8 @@
       </button>
       <span>Aquaponics</span>
     </mat-toolbar>
-<table>
-  <tr>
-    <td>
-    <mat-card class="testcard" >
-      <mat-card-title class="testcardheader">AquaLab</mat-card-title>
-      <mat-card-subtitle>Row A</mat-card-subtitle>
-      <mat-card-content class="testcardcontent">
-        <table>
-        <tr>
-          <td>LDO</td>
-          <td>102.535</td>
-        </tr>
-        <tr>
-          <td>Temp.</td>
-          <td>13.949°C</td>
-        </tr>
-      </table>
-      </mat-card-content>
-      <mat-card-subtitle>Row B</mat-card-subtitle>
-      <mat-card-content class="testcardcontent">
-        <table>
-          <tr>
-            <td>LDO</td>
-            <td>100.973</td>
-          </tr>
-          <tr>
-            <td>Temp.</td>
-            <td>13.801°C</td>
-          </tr>
-        </table>
-      </mat-card-content>
-    </mat-card>
-    </td>
-    <td>
-      <mat-card class="testcard" >
-        <mat-card-title class="testcardheader">ShowSystem</mat-card-title>
-        <mat-card-subtitle>Tank 1</mat-card-subtitle>
-        <mat-card-content class="testcardcontent">
-          <table>
-            <tr>
-              <td>LDO</td>
-              <td>100.316</td>
-            </tr>
-            <tr>
-              <td>Temp.</td>
-              <td>14.654°C</td>
-            </tr>
-            <tr>
-              <td>pH</td>
-              <td>7.278</td>
-            </tr>
-          </table>
-        </mat-card-content>
-        <mat-card-subtitle>Tank 2</mat-card-subtitle>
-        <mat-card-content class="testcardcontent">
-          <table>
-            <tr>
-              <td>LDO</td>
-              <td>99.554</td>
-            </tr>
-            <tr>
-              <td>Temp.</td>
-              <td>24.371°C</td>
-            </tr>
-          </table>
-        </mat-card-content>
-      </mat-card>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <mat-card class="testcard" >
-        <mat-card-title class="testcardheader">AquariaLab</mat-card-title>
-        <mat-card-content class="testcardcontent">
-          <table>
-            <tr>
-              <td>LDO</td>
-              <td>127.023</td>
-            </tr>
-            <tr>
-              <td>Temp.</td>
-              <td>13.949°C</td>
-            </tr>
-          </table>
-        </mat-card-content>
-        <mat-card-subtitle>ext. Measurement Unit</mat-card-subtitle>
-        <mat-card-content class="testcardcontent">
-          <table>
-            <tr>
-              <td>LDO 1</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Temp. 1</td>
-              <td>0 °C</td>
-            </tr>
-          </table>
-        </mat-card-content>
-      </mat-card>
-      </td>
-  </tr>
-</table>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
