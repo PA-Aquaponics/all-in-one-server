@@ -20,15 +20,19 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import { MainviewComponent } from './mainview/mainview.component';
 import { LogviewComponent } from './logview/logview.component';
+import { HttpClientModule} from "@angular/common/http";
+import { SystemCardComponent } from './mainview/system-card/system-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     MainviewComponent,
-    LogviewComponent
+    LogviewComponent,
+    SystemCardComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
