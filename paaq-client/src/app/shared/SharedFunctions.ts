@@ -1,4 +1,5 @@
 import {Sensor} from "../api/v1";
+import {Log} from "../api/v1";
 
 export function mapSensorsByPredicate(sensors: Sensor[], predicate: (sensor: Sensor) => string): Map<string, Sensor[]> {
   const map = new Map<string, Sensor[]>();

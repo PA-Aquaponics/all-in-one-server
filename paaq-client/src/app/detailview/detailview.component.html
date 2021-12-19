@@ -1,3 +1,4 @@
-<ng-container *ngIf="sensors">
+<ng-container *ngIf="sensors && logs">
   <p>Sensors in system: {{sensors.length}}</p>
+  <p>Logs in system: {{logs.length}}</p>
 </ng-container>
