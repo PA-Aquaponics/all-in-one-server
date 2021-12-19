@@ -25,6 +25,7 @@ import { SystemCardComponent } from './mainview/system-card/system-card.componen
 import { TankInfoComponent } from './mainview/system-card/tank-info/tank-info.component';
 import {FlexModule, GridModule} from "@angular/flex-layout";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { ErrorviewComponent } from './errorview/errorview.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MainviewComponent,
     LogviewComponent,
     SystemCardComponent,
-    TankInfoComponent
+    TankInfoComponent,
+    ErrorviewComponent
   ],
   imports: [
     HttpClientModule,
