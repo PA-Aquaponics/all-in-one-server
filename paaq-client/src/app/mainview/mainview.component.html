@@ -2,9 +2,9 @@
   <span>Aquaponics</span>
 </mat-toolbar>
 
-<div
-  fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around">
+<div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around">
   <ng-container *ngFor="let system of systemMap | keyvalue">
     <app-system-card fxFlex="auto" [systemName]="system.key" [systemSensors]="system.value"></app-system-card>
   </ng-container>
+  <a *ngIf="(systemMap && !(systemMap.size > 0))" href="/dashboard" class="mat-button">No entries? Reload!</a>
 </div>
