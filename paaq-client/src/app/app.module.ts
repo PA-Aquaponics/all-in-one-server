@@ -26,6 +26,7 @@ import { TankInfoComponent } from './mainview/system-card/tank-info/tank-info.co
 import {FlexModule, GridModule} from "@angular/flex-layout";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { ErrorViewComponent } from './errorview/error-view.component';
+import {httpInterceptorProviders} from "./http-interceptors";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,9 @@ import { ErrorViewComponent } from './errorview/error-view.component';
     GridModule,
     MatGridListModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
