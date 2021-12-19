@@ -3,5 +3,5 @@
   <ng-container *ngFor="let tank of tanks | keyvalue">
     <app-tank-info [tankName]="tank.key" [tankSensors]="tank.value"></app-tank-info>
   </ng-container>
-  <button (click)="viewSysteDetails()">Details</button>
+  <a [routerLink]="['/system', systemName]" mat-raised-button class="mat-primary">Details</a>
 </mat-card>

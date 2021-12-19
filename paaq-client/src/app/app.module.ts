@@ -27,6 +27,7 @@ import {FlexModule, GridModule} from "@angular/flex-layout";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { ErrorViewComponent } from './errorview/error-view.component';
 import {httpInterceptorProviders} from "./http-interceptors";
+import { DetailviewComponent } from './detailview/detailview.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {httpInterceptorProviders} from "./http-interceptors";
     LogviewComponent,
     SystemCardComponent,
     TankInfoComponent,
-    ErrorViewComponent
+    ErrorViewComponent,
+    DetailviewComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Sensor} from "../../api/v1";
 import {mapSensorsByPredicate} from "../../shared/SharedFunctions";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-system-card',
@@ -14,7 +15,9 @@ export class SystemCardComponent implements OnInit {
 
   tanks?: Map<string, Sensor[]>;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.tanks = this.mapSensorsByTank(this.systemSensors);
@@ -24,7 +27,8 @@ export class SystemCardComponent implements OnInit {
     return mapSensorsByPredicate(sensors, s => s.tank);
   }
 
-  viewSysteDetails() {
-
+  viewSystemDetails() {
+      const systemName = this.systemName ? this.systemName : null;
+      this.router.navigate(['/system', { id: systemName }]);
   }
 }

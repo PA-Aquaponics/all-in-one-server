@@ -1,10 +1,16 @@
 <mat-toolbar color="primary">
   <span>Aquaponics</span>
+  <span fxFlex="1 1 auto"></span>
+  <button mat-raised-button class="mat-accent" [disabled]="true">Add new System</button>
 </mat-toolbar>
 
-<div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around">
-  <ng-container *ngFor="let system of systemMap | keyvalue">
-    <app-system-card fxFlex="auto" [systemName]="system.key" [systemSensors]="system.value"></app-system-card>
-  </ng-container>
-  <a *ngIf="(systemMap && !(systemMap.size > 0))" href="/dashboard" class="mat-button">No entries? Reload!</a>
+<div style="padding: 10px">
+  <div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around">
+    <ng-container *ngFor="let system of systemMap | keyvalue">
+      <app-system-card fxFlex="auto" [systemName]="system.key" [systemSensors]="system.value"></app-system-card>
+    </ng-container>
+    <a *ngIf="(systemMap && !(systemMap.size > 0))" href="/dashboard" class="mat-button">No entries? Reload!</a>
+  </div>
+  <br>
 </div>
+
