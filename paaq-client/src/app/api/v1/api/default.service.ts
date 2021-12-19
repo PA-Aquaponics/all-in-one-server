@@ -19,6 +19,7 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 import { Sensor } from '../model/models';
+import { Log } from '../model/models';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -252,5 +253,52 @@ export class DefaultService {
             }
         );
     }
+
+    /**
+     * get a list of logs
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+     public logsGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Log>>;
+     public logsGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Log>>>;
+     public logsGet(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Log>>>;
+     public logsGet(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+ 
+         let localVarHeaders = this.defaultHeaders;
+ 
+         let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+         if (localVarHttpHeaderAcceptSelected === undefined) {
+             // to determine the Accept header
+             const httpHeaderAccepts: string[] = [
+                 'application/json'
+             ];
+             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+         }
+         if (localVarHttpHeaderAcceptSelected !== undefined) {
+             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+         }
+ 
+         let localVarHttpContext: HttpContext | undefined = options && options.context;
+         if (localVarHttpContext === undefined) {
+             localVarHttpContext = new HttpContext();
+         }
+ 
+ 
+         let responseType_: 'text' | 'json' = 'json';
+         if(localVarHttpHeaderAcceptSelected && localVarHttpHeaderAcceptSelected.startsWith('text')) {
+             responseType_ = 'text';
+         }
+ 
+         return this.httpClient.get<Array<Log>>(`${this.configuration.basePath}/logs`,
+             {
+                 context: localVarHttpContext,
+                 responseType: <any>responseType_,
+                 withCredentials: this.configuration.withCredentials,
+                 headers: localVarHeaders,
+                 observe: observe,
+                 reportProgress: reportProgress
+             }
+         );
+     }
 
 }
