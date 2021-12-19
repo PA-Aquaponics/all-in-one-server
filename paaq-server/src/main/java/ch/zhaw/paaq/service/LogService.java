@@ -29,7 +29,8 @@ public class LogService {
 
     public List<Log> getAllLogs() {
         Pageable limit = PageRequest.of(0, 200);
-        return logRepository.findAll(limit).getContent();
+        return logRepository.findAllByOrderByTimestampDesc(limit);
+//        return logRepository.findAll(limit).getContent();
     }
 
     public Optional<Log> getLogById(int id) {
