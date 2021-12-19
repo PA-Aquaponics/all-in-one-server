@@ -42,7 +42,11 @@ export class DefaultService {
         }
         if (typeof this.configuration.basePath !== 'string') {
             if (typeof basePath !== 'string') {
-                basePath = this.basePath;
+                if (this.basePath.includes('https')){
+                  basePath = this.basePath;
+                } else {
+                  basePath = this.basePath.replace('http', 'https');
+                }
             }
             this.configuration.basePath = basePath;
         }
