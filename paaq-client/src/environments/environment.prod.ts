@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  // basePath: 'localhost'
+  basePath: 'https://paaq.sloppy.zone/api/v1'
 };
