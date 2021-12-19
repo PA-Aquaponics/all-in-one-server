@@ -1,0 +1,17 @@
+<mat-card-subtitle>Tank: {{tankName}}</mat-card-subtitle>
+<mat-card-content class="testcardcontent">
+  <table>
+    <tr *ngIf="oxygenSensor">
+      <td>LDO</td>
+      <td>--</td>
+    </tr>
+    <tr *ngIf="tempSensor">
+      <td>Temp.</td>
+      <td>--</td>
+    </tr>
+    <tr *ngIf="phSensor">
+      <td>pH</td>
+      <td>--</td>
+    </tr>
+  </table>
+</mat-card-content>

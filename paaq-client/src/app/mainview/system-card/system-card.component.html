@@ -1,29 +1,7 @@
-<mat-card class="testcard" >
+<mat-card class="testcard">
   <mat-card-title class="testcardheader">{{systemName}}</mat-card-title>
-  <mat-card-subtitle>Row A</mat-card-subtitle>
-  <mat-card-content class="testcardcontent">
-    <table>
-      <tr>
-        <td>LDO</td>
-        <td>102.535</td>
-      </tr>
-      <tr>
-        <td>Temp.</td>
-        <td>13.949°C</td>
-      </tr>
-    </table>
-  </mat-card-content>
-  <mat-card-subtitle>Row B</mat-card-subtitle>
-  <mat-card-content class="testcardcontent">
-    <table>
-      <tr>
-        <td>LDO</td>
-        <td>100.973</td>
-      </tr>
-      <tr>
-        <td>Temp.</td>
-        <td>13.801°C</td>
-      </tr>
-    </table>
-  </mat-card-content>
+  <ng-container *ngFor="let tank of tanks | keyvalue">
+    <app-tank-info [tankName]="tank.key" [tankSensors]="tank.value"></app-tank-info>
+  </ng-container>
+  <button (click)="viewSysteDetails()">Details</button>
 </mat-card>

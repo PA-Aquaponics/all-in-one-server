@@ -22,6 +22,9 @@ import { MainviewComponent } from './mainview/mainview.component';
 import { LogviewComponent } from './logview/logview.component';
 import { HttpClientModule} from "@angular/common/http";
 import { SystemCardComponent } from './mainview/system-card/system-card.component';
+import { TankInfoComponent } from './mainview/system-card/tank-info/tank-info.component';
+import {FlexModule, GridModule} from "@angular/flex-layout";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { SystemCardComponent } from './mainview/system-card/system-card.componen
     SidebarComponent,
     MainviewComponent,
     LogviewComponent,
-    SystemCardComponent
+    SystemCardComponent,
+    TankInfoComponent
   ],
   imports: [
     HttpClientModule,
@@ -46,7 +50,10 @@ import { SystemCardComponent } from './mainview/system-card/system-card.componen
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    FlexModule,
+    GridModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
