@@ -6,6 +6,7 @@ import ch.zhaw.paaq.repository.LogRepository;
 import ch.zhaw.paaq.repository.SensorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ public class LogService {
     }
 
     public List<Log> getAllLogs() {
-        return logRepository.findAll();
+        Pageable limit = PageRequest.of(0, 200);
+        return logRepository.findAll(limit).getContent();
     }
 
     public Optional<Log> getLogById(int id) {
