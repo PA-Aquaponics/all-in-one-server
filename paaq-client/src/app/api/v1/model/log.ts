@@ -19,6 +19,6 @@
     unit: string;
     tank: string;
     system: string;
-    timestamp: string;
+    timestamp: Date;
 }
 
