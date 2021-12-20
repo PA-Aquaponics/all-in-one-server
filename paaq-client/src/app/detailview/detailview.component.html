@@ -1,4 +1,9 @@
 <ng-container *ngIf="sensors && logs">
+  <ul>
+    <li *ngFor="let sensor of sensors">
+      {{sensor.Name}} : {{getLogValue(sensor)}}
+    </li>
+  </ul>
   <p>Sensors in system: {{sensors.length}}</p>
   <p>Logs in system: {{logs.length}}</p>
 </ng-container>

@@ -38,7 +38,7 @@ export class DetailviewComponent implements OnInit {
       if (this.systemName && sensorMap.has(this.systemName)) {
         this.sensors = sensorMap.get(this.systemName);
       }
-    })
+    }) 
   }
 
   getLogValue(sensor: Sensor): any{
