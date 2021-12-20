@@ -51,6 +51,9 @@ export class DetailviewComponent implements OnInit {
     }
     this.logService.getLogs().subscribe(logs => {
       logs.forEach(log =>{
+        if (log.system != this.systemName) {
+          return;
+        }
         if(!this.logs!.some(l => l.name === log.name)){
           this.logs!.push(log)
         }else{
