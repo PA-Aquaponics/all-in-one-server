@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Sensor} from "../../api/v1";
+import {Log, Sensor} from "../../api/v1";
 import {mapSensorsByPredicate} from "../../shared/SharedFunctions";
 import {Router} from "@angular/router";
 
@@ -12,6 +12,7 @@ export class SystemCardComponent implements OnInit {
 
   @Input() systemName!: string;
   @Input() systemSensors!: Sensor[];
+  @Input() logs!: Log[];
 
   tanks?: Map<string, Sensor[]>;
 

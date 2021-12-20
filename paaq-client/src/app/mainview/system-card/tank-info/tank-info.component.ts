@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Sensor} from "../../../api/v1";
+import {Log, Sensor} from "../../../api/v1";
 
 @Component({
   selector: 'app-tank-info',
@@ -10,6 +10,7 @@ export class TankInfoComponent implements OnInit {
 
   @Input() tankName!: string;
   @Input() tankSensors!: Sensor[];
+  @Input() logs!: Log[];
 
   oxygenSensor?: Sensor;
   phSensor?: Sensor;
@@ -21,5 +22,9 @@ export class TankInfoComponent implements OnInit {
     this.oxygenSensor = this.tankSensors.find(s => s.unit === '%');
     this.phSensor = this.tankSensors.find(s => s.unit === 'pH');
     this.tempSensor = this.tankSensors.find(s => s.unit === 'Celcius' || s.unit === 'Celsius');
+  }
+
+  getLogValue(sensor: Sensor): any{
+    return this.logs?.filter(l => l.name === sensor.name)[0].value;
   }
 }

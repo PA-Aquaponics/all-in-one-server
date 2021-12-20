@@ -3,15 +3,15 @@
   <table>
     <tr *ngIf="oxygenSensor">
       <td>LDO</td>
-      <td>--</td>
+      <td>{{getLogValue(oxygenSensor)}}</td>
     </tr>
     <tr *ngIf="tempSensor">
       <td>Temp.</td>
-      <td>--</td>
+      <td>{{getLogValue(tempSensor)}}</td>
     </tr>
     <tr *ngIf="phSensor">
       <td>pH</td>
-      <td>--</td>
+      <td>{{getLogValue(phSensor)}}</td>
     </tr>
   </table>
 </mat-card-content>

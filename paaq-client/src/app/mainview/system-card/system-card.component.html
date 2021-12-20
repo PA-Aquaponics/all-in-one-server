@@ -1,7 +1,7 @@
 <mat-card class="testcard">
   <mat-card-title class="testcardheader">{{systemName}}</mat-card-title>
   <ng-container *ngFor="let tank of tanks | keyvalue">
-    <app-tank-info [tankName]="tank.key" [tankSensors]="tank.value"></app-tank-info>
+    <app-tank-info [tankName]="tank.key" [tankSensors]="tank.value" [logs]="logs"></app-tank-info>
   </ng-container>
   <a [routerLink]="['/system', systemName]" mat-raised-button class="mat-primary">Details</a>
 </mat-card>
