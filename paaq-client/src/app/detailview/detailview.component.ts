@@ -46,14 +46,17 @@ export class DetailviewComponent implements OnInit {
   }
 
   getLogs(): void {
+    if (!this.logs) {
+      this.logs = [];
+    }
     this.logService.getLogs().subscribe(logs => {
       logs.forEach(log =>{
-        if(!logs.filter(l => l.name === log.name)){
-          logs.push(log)
+        if(!this.logs!.some(l => l.name === log.name)){
+          this.logs!.push(log)
         }else{
-          var oldLog = logs.filter(l => l.name === log.name)[0];
+          let oldLog = this.logs!.filter(l => l.name === log.name)[0];
           if(log.timestamp > oldLog.timestamp){
-            logs[logs.indexOf(oldLog)] = log
+            this.logs![logs.indexOf(oldLog)] = log
           }
         }
       })
