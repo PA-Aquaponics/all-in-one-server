@@ -19,11 +19,11 @@ public class Sensor   {
   @JsonProperty("entityId")
   private Integer entityId;
 
-  @JsonProperty("Name")
+  @JsonProperty("name")
   @Column(name = "Name")
   private String name;
 
-  @JsonProperty("SerialNrDevice")
+  @JsonProperty("serialNrDevice")
   private String serialNrDevice;
 
   @JsonProperty("deviceType")
