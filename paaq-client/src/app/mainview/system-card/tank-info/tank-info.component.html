@@ -4,14 +4,17 @@
     <tr *ngIf="oxygenSensor">
       <td>LDO</td>
       <td>{{getLogValue(oxygenSensor)}}</td>
+      <td style="text-align: left">{{oxygenSensor.unit}}</td>
     </tr>
     <tr *ngIf="tempSensor">
       <td>Temp.</td>
       <td>{{getLogValue(tempSensor)}}</td>
+      <td style="text-align: left">{{tempSensor.unit}}</td>
     </tr>
     <tr *ngIf="phSensor">
       <td>pH</td>
       <td>{{getLogValue(phSensor)}}</td>
+      <td style="text-align: left">{{phSensor.unit}}</td>
     </tr>
   </table>
 </mat-card-content>

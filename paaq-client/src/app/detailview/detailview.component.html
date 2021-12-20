@@ -1,13 +1,21 @@
-<ng-container *ngIf="sensors && logs">
-  <ng-container *ngFor="let system of systemMap | keyvalue">
-    <mat-card class="testcard">
-      <table>
-        <th class="testcardheader">{{system.key}}</th>
-        <tr *ngFor="let sensor of system.value">
-          <td>{{sensor.name}}</td>
-          <td>{{getLogValue(sensor)}}</td>
-        </tr>
-      </table>
-    </mat-card>
+<mat-toolbar color="primary">
+  <span>{{systemName}}</span>
+  <span fxFlex="1 1 auto"></span>
+  <button mat-raised-button class="mat-accent" [disabled]="true">Add new Sensor</button>
+</mat-toolbar>
+
+<div style="padding: 10px">
+  <ng-container *ngIf="sensors && logs">
+    <ng-container *ngFor="let system of systemMap | keyvalue">
+      <mat-card class="testcard">
+        <table>
+          <th class="testcardheader">{{system.key}}</th>
+          <tr *ngFor="let sensor of system.value">
+            <td>{{sensor.name}}</td>
+            <td>{{getLogValue(sensor)}}</td>
+          </tr>
+        </table>
+      </mat-card>
+    </ng-container>
   </ng-container>
-</ng-container>
+</div>
