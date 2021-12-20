@@ -44,7 +44,12 @@ export class DetailviewComponent implements OnInit {
   }
 
   getLogValue(sensor: Sensor): any{
-    return this.logs?.filter(l => l.name === sensor.name)[0].value;
+    if(this.logs!.filter(l => l.name === sensor.name).length > 0){
+      return this.logs?.filter(l => l.name === sensor.name)[0].value;
+    }else{
+      return "--";
+    }
+    
   }
 
   getLogs(): void {
