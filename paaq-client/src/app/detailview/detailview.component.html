@@ -1,21 +1,14 @@
 <mat-toolbar color="primary">
-  <span>{{systemName}}</span>
+  <span>System: {{systemName}}</span>
   <span fxFlex="1 1 auto"></span>
   <button mat-raised-button class="mat-accent" [disabled]="true">Add new Sensor</button>
 </mat-toolbar>
 
 <div style="padding: 10px">
-  <ng-container *ngIf="sensors && logs">
-    <ng-container *ngFor="let system of systemMap | keyvalue">
-      <mat-card class="testcard">
-        <table>
-          <th class="testcardheader">{{system.key}}</th>
-          <tr *ngFor="let sensor of system.value">
-            <td>{{sensor.name}}</td>
-            <td>{{getLogValue(sensor)}}</td>
-          </tr>
-        </table>
-      </mat-card>
+  <div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around">
+    <ng-container *ngFor="let tank of tankMap | keyvalue">
+      <app-tank-card fxFlex="auto" [tankName]="tank.key" [tankSensors]="tank.value" [logs]="logs"></app-tank-card>
     </ng-container>
-  </ng-container>
+  </div>
+  <br>
 </div>

@@ -1,0 +1,12 @@
+<mat-card class="testcard">
+  <mat-card-title class="testcardheader">Tank {{tankName}}</mat-card-title>
+  <mat-card-content class="testcardcontent">
+    <table>
+      <tr *ngFor="let sensor of tankSensors">
+        <td>{{sensor.name}}</td>
+        <td>{{getLogValue(sensor)}}</td>
+        <td>{{sensor.unit}}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

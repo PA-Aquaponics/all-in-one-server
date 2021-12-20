@@ -16,8 +16,8 @@ export class DetailviewComponent implements OnInit {
 
   systemName?: string;
   sensors?: Sensor[];
-  logs?: Log[];
-  systemMap?: Map<string, Sensor[]>;
+  logs: Log[] = [];
+  tankMap?: Map<string, Sensor[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,9 +38,9 @@ export class DetailviewComponent implements OnInit {
       const sensorMap = mapSensorsByPredicate(sensors, s => s.system);
       if (this.systemName && sensorMap.has(this.systemName)) {
         this.sensors = sensorMap.get(this.systemName);
-        this.systemMap = this.mapSensorsToTank(this.sensors!);
+        this.tankMap = this.mapSensorsToTank(this.sensors!);
       }
-    }) 
+    })
   }
 
   getLogValue(sensor: Sensor): any{
@@ -69,7 +69,6 @@ export class DetailviewComponent implements OnInit {
   }
 
   private mapSensorsToTank(sensors: Sensor[]): Map<string, Sensor[]> {
-    console.log(mapSensorsByPredicate(sensors, s=> s.tank))
     return mapSensorsByPredicate(sensors, s=> s.tank);
   }
 }

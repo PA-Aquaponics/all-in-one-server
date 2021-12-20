@@ -28,6 +28,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { ErrorViewComponent } from './errorview/error-view.component';
 import {httpInterceptorProviders} from "./http-interceptors";
 import { DetailviewComponent } from './detailview/detailview.component';
+import { TankCardComponent } from './detailview/tank-card/tank-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DetailviewComponent } from './detailview/detailview.component';
     SystemCardComponent,
     TankInfoComponent,
     ErrorViewComponent,
-    DetailviewComponent
+    DetailviewComponent,
+    TankCardComponent
   ],
   imports: [
     HttpClientModule,
