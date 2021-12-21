@@ -29,6 +29,12 @@ import { ErrorViewComponent } from './errorview/error-view.component';
 import {httpInterceptorProviders} from "./http-interceptors";
 import { DetailviewComponent } from './detailview/detailview.component';
 import { TankCardComponent } from './detailview/tank-card/tank-card.component';
+import { NewSensorDialogComponent } from './new-sensor-dialog/new-sensor-dialog.component';
+import { DialogContentComponent } from './new-sensor-dialog/dialog-content/dialog-content.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import { TankCardComponent } from './detailview/tank-card/tank-card.component';
     TankInfoComponent,
     ErrorViewComponent,
     DetailviewComponent,
-    TankCardComponent
+    TankCardComponent,
+    NewSensorDialogComponent,
+    DialogContentComponent
   ],
   imports: [
     HttpClientModule,
@@ -52,18 +60,24 @@ import { TankCardComponent } from './detailview/tank-card/tank-card.component';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatDialogModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSelectModule,
     MatCardModule,
     FlexModule,
     GridModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [
     httpInterceptorProviders,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent]
 })

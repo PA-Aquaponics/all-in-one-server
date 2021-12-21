@@ -1,0 +1,81 @@
+<h1 mat-dialog-title>Neues System hinzufügen</h1>
+<div mat-dialog-content>
+  <p></p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Systemname:</mat-label>
+    <input matInput [(ngModel)]="data.systemName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Tank:</mat-label>
+    <input matInput [(ngModel)]="data.tankName">
+  </mat-form-field>
+
+  <h2>Neuer Sensor:</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input matInput [(ngModel)]="data.sensorName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Seriennummer:</mat-label>
+    <input matInput [(ngModel)]="data.serialNrDevice">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Gerätetyp:</mat-label>
+    <input matInput [(ngModel)]="data.deviceType">
+  </mat-form-field>
+
+  <mat-divider></mat-divider>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Starting Pos:</mat-label>
+    <input matInput [(ngModel)]="data.startingPos">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Länge:</mat-label>
+    <input matInput [(ngModel)]="data.length">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Datentyp:</mat-label>
+    <input matInput [(ngModel)]="data.datatype">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>ModBus Port:</mat-label>
+    <input matInput [(ngModel)]="data.modBusPort">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Serial Port:</mat-label>
+    <input matInput [(ngModel)]="data.serialPort">
+  </mat-form-field>
+
+  <mat-divider></mat-divider>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Alarm an/aus:</mat-label>
+    <mat-select>
+      <mat-option value="true">an</mat-option>
+      <mat-option value="false">aus</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Alarm Grenze oben:</mat-label>
+    <input matInput [(ngModel)]="data.alarmUpperLimit">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Alarm Grenze unten:</mat-label>
+    <input matInput [(ngModel)]="data.alarmLowerLimit">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Abbrechen</button>
+  <button mat-raised-button class="mat-accent" [mat-dialog-close]="true" cdkFocusInitial>Ok</button>
+</div>
